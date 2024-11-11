@@ -1,0 +1,273 @@
+<html><head><base href="." />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>M-DAME Savonnerie Naturelle Toulouse</title>
+<style>
+:root {
+    --main-color: #6B8E23;
+    --accent-color: #8B4513;
+    --text-color: #333;
+    --light-bg: #F5F5F5;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Cormorant Garamond', serif;
+    color: var(--text-color);
+    background-color: var(--light-bg);
+}
+
+header {
+    background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://images.unsplash.com/photo-1441974231531-c6227db76b6e') center/cover;
+    height: 60vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    position: relative;
+}
+
+.title {
+    font-size: 3.5em;
+    margin-bottom: 0.5em;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.subtitle {
+    font-size: 1.8em;
+    font-weight: 300;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+}
+
+.content {
+    max-width: 1200px;
+    margin: 2em auto;
+    padding: 0 2em;
+}
+
+.about-btn {
+    background-color: var(--main-color);
+    color: white;
+    border: none;
+    padding: 1em 2em;
+    font-size: 1.2em;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 2em auto;
+    display: block;
+    transition: background-color 0.3s ease;
+    font-family: 'Cormorant Garamond', serif;
+}
+
+.about-btn:hover {
+    background-color: var(--accent-color);
+}
+
+.about-section {
+    display: none;
+    background-color: white;
+    padding: 2em;
+    border-radius: 10px;
+    margin: 2em 0;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    line-height: 1.6;
+}
+
+.about-section.visible {
+    display: block;
+    animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+footer {
+    background: var(--main-color);
+    color: white;
+    text-align: center;
+    padding: 1em;
+    margin-top: 2em;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 2em;
+    margin: 1em 0;
+}
+
+.social-icons a {
+    color: white;
+    transition: transform 0.3s ease;
+}
+
+.social-icons a:hover {
+    transform: scale(1.2);
+}
+
+.social-icons svg {
+    width: 30px;
+    height: 30px;
+    fill: currentColor;
+}
+
+@media (max-width: 768px) {
+    .title {
+        font-size: 2.5em;
+    }
+    .subtitle {
+        font-size: 1.3em;
+    }
+    .social-icons {
+        gap: 1em;
+    }
+    .social-icons svg {
+        width: 25px;
+        height: 25px;
+    }
+}
+
+.contact-info {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 10;
+}
+
+.contact-btn {
+    background-color: var(--main-color);
+    color: white;
+    border: none;
+    padding: 0.8em 1.5em;
+    font-size: 1em;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-family: 'Cormorant Garamond', serif;
+}
+
+.contact-btn:hover {
+    background-color: var(--accent-color);
+}
+
+.contact-details {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: white;
+    padding: 1em;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    margin-top: 10px;
+    min-width: 200px;
+}
+
+.contact-details.visible {
+    display: block;
+    animation: fadeIn 0.3s ease-in;
+}
+
+.contact-details a {
+    color: var(--main-color);
+    text-decoration: none;
+    display: block;
+    margin: 5px 0;
+}
+
+.contact-details a:hover {
+    color: var(--accent-color);
+}
+
+@media (max-width: 768px) {
+    .contact-info {
+        position: relative;
+        top: auto;
+        right: auto;
+        text-align: center;
+        margin: 1em;
+    }
+    
+    .contact-details {
+        position: static;
+        margin: 1em auto;
+    }
+}
+</style>
+</head>
+<body>
+    <header>
+        <h1 class="title">M-DAME</h1>
+        <p class="subtitle">Savonnerie Naturelle de Toulouse</p>
+        <p class="subtitle">Savons & Bougies Artisanales</p>
+    </header>
+
+    <div class="contact-info">
+        <button class="contact-btn" onclick="toggleContact()">Contact</button>
+        <div class="contact-details" id="contactDetails">
+            <a href="tel:0781729761">Tél: 07 81 72 97 61</a>
+            <a href="mailto:mdam_artisanal@gmail.com">mdam_artisanal@gmail.com</a>
+        </div>
+    </div>
+
+    <div class="content">
+        <button class="about-btn" onclick="toggleAbout()">À Propos</button>
+        <div class="about-section" id="aboutSection">
+            <h2>Notre Passion pour le Naturel</h2>
+            <p>Chez M-DAME, nous créons avec passion des savons et des bougies artisanales, en utilisant exclusivement des ingrédients naturels soigneusement sélectionnés. Chaque création est le fruit d'un savoir-faire authentique, respectueux de l'environnement et de votre bien-être.</p>
+            <p>Nos savons sont fabriqués à la main selon des méthodes traditionnelles, enrichis d'huiles essentielles pures et d'extraits botaniques qui nourrissent et protègent votre peau. Nos bougies, composées de cire végétale, diffusent des parfums subtils et naturels qui transforment votre intérieur en un havre de paix.</p>
+            <p>Chaque produit M-DAME est unique, créé avec amour dans notre atelier toulousain, incarnant notre engagement pour une cosmétique naturelle, éthique et locale.</p>
+        </div>
+    </div>
+
+    <footer>
+        <div class="social-icons">
+            <a href="https://www.youtube.com" target="_blank" aria-label="YouTube">
+                <svg viewBox="0 0 24 24">
+                    <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                </svg>
+            </a>
+            <a href="https://www.snapchat.com" target="_blank" aria-label="Snapchat">
+                <svg viewBox="0 0 24 24">
+                    <path d="M12.206.793c.99 0 4.347.276 5.93 3.821.529 1.193.403 3.219.299 4.847l-.003.06c-.012.18-.022.345-.03.51.075.045.203.09.401.09.3-.016.659-.12 1.033-.301.165-.088.344-.104.464-.104.182 0 .359.029.509.09.45.149.734.479.734.838.015.449-.39.839-1.213 1.168-.089.029-.209.075-.344.119-.45.135-1.139.36-1.333.81-.09.224-.061.524.12.868l.015.015c.06.136 1.526 3.475 4.791 4.014.255.044.435.27.42.509 0 .075-.015.149-.045.225-.24.569-1.273.988-3.146 1.271-.059.091-.12.375-.164.57-.029.179-.074.36-.134.553-.076.271-.27.405-.555.405h-.03c-.135 0-.313-.031-.538-.074-.36-.075-.765-.135-1.273-.135-.3 0-.599.015-.913.074-.6.104-1.123.464-1.723.884-.853.599-1.826 1.288-3.294 1.288-.06 0-.119-.015-.18-.015h-.149c-1.468 0-2.427-.675-3.279-1.288-.599-.42-1.107-.779-1.707-.884-.314-.045-.629-.074-.928-.074-.54 0-.958.089-1.272.149-.211.043-.391.074-.54.074-.374 0-.523-.224-.583-.42-.061-.192-.09-.389-.135-.567-.046-.181-.105-.494-.166-.57-1.918-.222-2.95-.642-3.189-1.226-.031-.063-.052-.15-.055-.225-.015-.243.165-.465.42-.509 3.264-.54 4.73-3.879 4.791-4.02l.016-.029c.18-.345.224-.645.119-.869-.195-.434-.884-.658-1.332-.809-.121-.029-.24-.074-.346-.119-1.107-.435-1.257-.93-1.197-1.273.09-.479.674-.793 1.168-.793.146 0 .27.029.383.074.42.194.789.3 1.104.3.234 0 .384-.06.465-.105l-.046-.569c-.098-1.626-.225-3.651.307-4.837C7.392 1.077 10.739.807 11.727.807l.419-.015h.06z"/>
+                </svg>
+            </a>
+            <a href="https://www.twitter.com" target="_blank" aria-label="Twitter">
+                <svg viewBox="0 0 24 24">
+                    <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
+                </svg>
+            </a>
+            <a href="https://www.instagram.com" target="_blank" aria-label="Instagram">
+                <svg viewBox="0 0 24 24">
+                    <path d="M12 0C8.74 0 8.333.015 7.053.072 5.775.132 4.905.333 4.14.63c-.789.306-1.459.717-2.126 1.384S.935 3.35.63 4.14C.333 4.905.131 5.775.072 7.053.012 8.333 0 8.74 0 12s.015 3.667.072 4.947c.06 1.277.261 2.148.558 2.913.306.788.717 1.459 1.384 2.126.667.666 1.336 1.079 2.126 1.384.766.296 1.636.499 2.913.558C8.333 23.988 8.74 24 12 24s3.667-.015 4.947-.072c1.277-.06 2.148-.262 2.913-.558.788-.306 1.459-.718 2.126-1.384.666-.667 1.079-1.335 1.384-2.126.296-.765.499-1.636.558-2.913.06-1.28.072-1.687.072-4.947s-.015-3.667-.072-4.947c-.06-1.277-.262-2.149-.558-2.913-.306-.789-.718-1.459-1.384-2.126C21.319 1.347 20.651.935 19.86.63c-.765-.297-1.636-.499-2.913-.558C15.667.012 15.26 0 12 0zm0 2.16c3.203 0 3.585.016 4.85.071 1.17.055 1.805.249 2.227.415.562.217.96.477 1.382.896.419.42.679.819.896 1.381.164.422.36 1.057.413 2.227.057 1.266.07 1.646.07 4.85s-.015 3.585-.074 4.85c-.061 1.17-.256 1.805-.421 2.227-.224.562-.479.96-.899 1.382-.419.419-.824.679-1.38.896-.42.164-1.065.36-2.235.413-1.274.057-1.649.07-4.859.07-3.211 0-3.586-.015-4.859-.074-1.171-.061-1.816-.256-2.236-.421-.569-.224-.96-.479-1.379-.899-.421-.419-.69-.824-.9-1.38-.165-.42-.359-1.065-.42-2.235-.045-1.26-.061-1.649-.061-4.844 0-3.196.016-3.586.061-4.861.061-1.17.255-1.814.42-2.234.21-.57.479-.96.9-1.381.419-.419.81-.689 1.379-.898.42-.166 1.051-.361 2.221-.421 1.275-.045 1.65-.06 4.859-.06l.045.03zm0 3.678c-3.405 0-6.162 2.76-6.162 6.162 0 3.405 2.76 6.162 6.162 6.162 3.405 0 6.162-2.76 6.162-6.162 0-3.405-2.76-6.162-6.162-6.162zM12 16c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm7.846-10.405c0 .795-.646 1.44-1.44 1.44-.795 0-1.44-.646-1.44-1.44 0-.794.646-1.439 1.44-1.439.793-.001 1.44.645 1.44 1.439z"/>
+                </svg>
+            </a>
+            <a href="https://wa.me/your-number" target="_blank" aria-label="WhatsApp">
+                <svg viewBox="0 0 24 24">
+                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                </svg>
+            </a>
+        </div>
+        <p>&copy; 2024 M-DAME Savonnerie Naturelle - Tous droits réservés</p>
+    </footer>
+
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <script>
+        function toggleAbout() {
+            const aboutSection = document.getElementById('aboutSection');
+            aboutSection.classList.toggle('visible');
+        }
+
+        function toggleContact() {
+            const contactDetails = document.getElementById('contactDetails');
+            contactDetails.classList.toggle('visible');
+        }
+    </script>
+</body>
+</html>
